@@ -1,14 +1,14 @@
 # LLM Evaluation Mini — Reliability & Oversight
 
 A tiny, reproducible evaluation suite that compares two LLM systems on rubric-based feedback ratings.
-It demonstrates **paired analysis** (Wilcoxon signed-rank, rank-biserial effect size) and **inter-rater reliability**
+It demonstrates paired analysis (Wilcoxon signed-rank, rank-biserial effect size) and inter-rater reliability
 (Krippendorff's alpha, interval) with a simple plot and a clean report — ideal as a portfolio artifact
-for roles focused on **evaluation infrastructure**, **data quality**, and **oversight**.
+for roles focused on evaluation infrastructure, data quality, and oversight.
 
 > One weekend build: run `python -m src.pipeline.run_eval` and open `reports/summary.tsv` and `reports/delta_plot.png`.
 
 ## Why this exists
-Preference ≠ reliability. This repo shows how to evaluate *feedback quality* using rubric-aligned ratings,
+Preference ≠ reliability. This repo shows how to evaluate feedback quality using rubric-aligned ratings,
 with transparent stats and a single reproducible script.
 
 ## Repo layout
@@ -66,8 +66,31 @@ Running the demo with mock ratings produces reproducible outputs:
 These results confirm the pipeline runs end-to-end and outputs reliability metrics and visualizations.  
 When replaced with real ratings, the same analysis quantifies rubric anchoring effects on clarity, actionability, and reliability.
 
+## Key Features
+- **Reproducible pipeline:** single script → same outputs every run (seeded random generator).
+- **Transparent metrics:** Wilcoxon (paired), rank-biserial, Krippendorff’s α (interval).
+- **Modular design:** metrics in `src/eval/`, pipeline in `src/pipeline/`, easy to extend for new datasets.
+- **CI-ready:** includes `pytest` + GitHub Actions workflow for automated verification.
+- **Auto-reporting:** saves TSV summary and Matplotlib plot for instant interpretability.
+
+## Extending / Customizing
+To use your own data:
+1. Replace `data/ratings_control.csv` and `data/ratings_rubric.csv` with your ratings (7-point scale, one row per prompt × rater).
+2. Edit `data/prompts.csv` to match your items.
+3. Run `python -m src.pipeline.run_eval` — all downstream scripts, plots, and summaries update automatically.
+
+Add new metrics:
+- Drop a function into `src/eval/metrics.py`.
+- Register it in `src/pipeline/run_eval.py` to include in reports.
+
+## Automated Tests & CI
+- Unit tests for all metrics under `tests/test_metrics.py` (`pytest`).
+- GitHub Actions workflow runs tests + evaluation on every push.
+- Example status badge:
+
+![CI](https://github.com/yourusername/llm-eval-mini/actions/workflows/ci.yml/badge.svg)
 
 ## Notes
-- This repo uses **synthetic example data**; replace with your own ratings to run real analysis.
+- This repo uses synthetic example data; replace with your own ratings to run real analysis.
 - No external APIs required.
 - Charts use Matplotlib with default styles and single plots as required.
