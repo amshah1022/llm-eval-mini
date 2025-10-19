@@ -88,7 +88,7 @@ Add new metrics:
 - GitHub Actions workflow runs tests + evaluation on every push.
 - Example status badge:
 
-![CI][(https://github.com/amshah1022/llm-eval-mini/actions/workflows/ci.yml/badge.svg)](https://github.com/amshah1022/llm-eval-mini/actions/workflows/ci.yml))
+![CI](https://github.com/amshah1022/llm-eval-mini/actions/workflows/ci.yml/badge.svg)
 
 ## Notes
 - This repo uses synthetic example data; replace with your own ratings to run real analysis.
