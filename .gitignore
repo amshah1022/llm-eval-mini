@@ -1,0 +1,17 @@
+# Environments & caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Reports & artifacts
+reports/*.png
+reports/*.pdf
+reports/*.html
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Coverage / test
+.coverage
+htmlcov/
