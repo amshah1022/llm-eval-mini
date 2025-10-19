@@ -1,0 +1,2 @@
+n_prompts	alpha_control	alpha_rubric	wilcoxon_W	wilcoxon_Z	p_two_sided	effect_r	rank_biserial	median_control	median_rubric	median_delta
+12	0.486	0.098	18.0	-0.076	0.9397	-0.027	0.0	4.75	4.75	0.0
