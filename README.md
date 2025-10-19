@@ -49,7 +49,7 @@ python -m src.pipeline.run_eval
 - **Effect size:** Rank-biserial correlation `r_rb` and `r = Z / sqrt(N)`.
 - **Reliability:** Krippendorff's alpha (interval) across raters per condition.
 
-### 📊 Example Results (Synthetic Data)
+### Example Results (Synthetic Data)
 
 Running the demo with mock ratings produces reproducible outputs:
 
