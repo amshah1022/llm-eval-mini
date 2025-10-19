@@ -49,6 +49,24 @@ python -m src.pipeline.run_eval
 - **Effect size:** Rank-biserial correlation `r_rb` and `r = Z / sqrt(N)`.
 - **Reliability:** Krippendorff's alpha (interval) across raters per condition.
 
+### 📊 Example Results (Synthetic Data)
+
+Running the demo with mock ratings produces reproducible outputs:
+
+| Metric | Value | Interpretation |
+|:--|:--:|:--|
+| n_prompts | 12 | paired comparisons |
+| Krippendorff’s α (control / rubric) | 0.486 / 0.098 | moderate vs. low inter-rater reliability |
+| Wilcoxon Z | –0.08 | near zero difference |
+| p (two-sided) | 0.94 | not significant (expected for synthetic data) |
+| Median Δ | 0.0 | identical medians |
+
+![Paired differences plot](reports/delta_plot.png)
+
+These results confirm the pipeline runs end-to-end and outputs reliability metrics and visualizations.  
+When replaced with real ratings, the same analysis quantifies rubric anchoring effects on clarity, actionability, and reliability.
+
+
 ## Notes
 - This repo uses **synthetic example data**; replace with your own ratings to run real analysis.
 - No external APIs required.
