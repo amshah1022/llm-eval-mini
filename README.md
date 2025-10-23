@@ -1,14 +1,7 @@
 # LLM Evaluation Mini — Reliability & Oversight
 
-A tiny, reproducible evaluation suite that compares two LLM systems on rubric-based feedback ratings.
-It demonstrates paired analysis (Wilcoxon signed-rank, rank-biserial effect size) and inter-rater reliability
-(Krippendorff's alpha, interval) with a simple plot and a clean report — ideal as a portfolio artifact
-for roles focused on evaluation infrastructure, data quality, and oversight.
-
-> One weekend build: run `python -m src.pipeline.run_eval` and open `reports/summary.tsv` and `reports/delta_plot.png`.
-
 ## Why this exists
-Preference ≠ reliability. This repo shows how to evaluate feedback quality using rubric-aligned ratings,
+This repo shows how to evaluate feedback quality using rubric-aligned ratings,
 with transparent stats and a single reproducible script.
 
 ## Repo layout
